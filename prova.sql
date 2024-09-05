@@ -31,3 +31,14 @@ values (1, 1, "2024-01-10", "2024-06-30"),
         (3, 3, "2024-03-15", "2024-09-15"),
         (4, 4, "2024-04-20", "2024-10-20"),
         (5, 5, "2024-05-01", "2024-11-30");
+        
+select nome_funcionario, data_inicio, data_fim
+from funcionarios
+left join funcionarios_projeto
+on funcionarios.id_funcionario = funcionarios_projetos.id_funcionario;
+
+select nome_funcionario, data_inicio
+from funcionarios_projetos
+inner join funcionarios
+on funcionarios_projetos.id_funcionario = funcionarios.id_funcionario
+where data_inicio = "2024-03-01";
